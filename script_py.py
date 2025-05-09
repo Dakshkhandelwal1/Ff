@@ -44,15 +44,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
 
 load_dotenv()
-gemini_api_key = os.getenv("AIzaSyCRJfU4zcazcB9uwbMLEpoMpbMJkOH-jsI")
-huggingface_token = os.getenv("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")
+gemini_api_key = os.getenv("your gemini api key")
+huggingface_token = os.getenv("your huggingface token")
 
-#if huggingface_token:
-  #  login(token=huggingface_token)
+
 
 client = chromadb.PersistentClient(path="chroma_db")
-#text_embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
-       #arxiv_tool = ArxivQueryRun()
 
 
 
@@ -101,19 +98,6 @@ def generate_response(query, context):
     return response['choices'][0]['message']['content']
 
 all_text = extract_text_from_pdfs("/content/28345af3-7271-4146-8cf3-8da0f9c73222.pdf")
-collection = process_text_and_store(all_text)
-
-def generate():
-    #all_text = extract_text_from_pdfs("/content/28345af3-7271-4146-8cf3-8da0f9c73222.pdf")
-   # collection = process_text_and_store(all_text)
-                           # st.success("PDF content processed and stored successfully!")
-
-    query = input('enter your prompt:')
-                                                     #if st.button("Execute Query") and query:
-    results = semantic_search(query, collection)
-    context = "\n".join(results['documents'][0])
-    response = generate_response(query, context)
-    return response # Added return statement to make the function useful
 
 def main():
     st.title("RAG-powered Research Paper Assistant")
