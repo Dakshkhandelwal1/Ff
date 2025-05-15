@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1VMYZnHk9DAiiuqwYn8wZcD9RRO9YhgrU
 """
 
-!pip install pyPDF2
 
 import PyPDF2
 
@@ -20,18 +19,10 @@ def extract_text_from_pdfs(pdf_path):
         return text
 
 # Example usage
-pdf_file_path = "/content/28345af3-7271-4146-8cf3-8da0f9c73222.pdf"
-extracted_text = extract_text_from_pdfs(pdf_file_path)
-print(len(extracted_text))
+#pdf_file_path = "/content/28345af3-7271-4146-8cf3-8da0f9c73222.pdf"
+#extracted_text = extract_text_from_pdfs(pdf_file_path)
+#print(len(extracted_text))
 
-!pip install pyPDF2
-!pip install streamlit
-!pip install Sentence_Transformer
-!pip install chromadb
-!pip install langchain
-!pip install langchain_community
-!pip install dotenv
-!pip install litellm
 #!pip install Arvix
 import os
 import PyPDF2
